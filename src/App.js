@@ -1,11 +1,25 @@
 import React from "react";
-import Navigation from "./components/Navbar";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import CreditCard from "./components/CreditCard";
+import CardList from "./components/CardList";
+import CenteredButton from "./components/CenteredButton";
+import Institutional from "./components/Institutional";
 import "./App.scss";
+
+import posts from "./data/posts";
 
 function App() {
   return (
     <div className="App">
-      <Navigation text="Magbnak é incrivel" color="#f00" />
+      <Navbar />
+      <Hero />
+
+      <CreditCard />
+      <CardList posts={posts}></CardList>
+      <CenteredButton>Abra sua conta</CenteredButton>
+
+      <Institutional />
     </div>
   );
 }
