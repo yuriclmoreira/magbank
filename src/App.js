@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import CreditCard from "./components/CreditCard";
@@ -6,22 +6,30 @@ import CardList from "./components/CardList";
 import CenteredButton from "./components/CenteredButton";
 import Institutional from "./components/Institutional";
 import Faq from "./components/Faq";
+import Footer from "./components/Footer";
 
 import "./App.scss";
 
 import posts from "./data/posts";
+import AccountModal from "./components/AccountModal";
 
 function App() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div className="App">
-      <Navbar />
-      <Hero />
+      <Navbar handleCreateAcc={() => setShowModal(true)} />
+      <Hero onClick={() => setShowModal(true)} />
       <CreditCard />
 
       <CardList posts={posts}></CardList>
-      <CenteredButton>Abra sua conta</CenteredButton>
-      <Institutional />
+      <CenteredButton onClick={() => setShowModal(true)}>
+        Abra sua conta
+      </CenteredButton>
+      <Institutional onClick={() => setShowModal(true)} />
       <Faq />
+      <Footer />
+      <AccountModal show={showModal} handleClose={() => setShowModal(false)} />
     </div>
   );
 }
