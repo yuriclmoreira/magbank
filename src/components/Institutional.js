@@ -9,7 +9,7 @@ import {
 import IconText from "./IconText";
 import "./Institutional.scss";
 
-const Institutional = () => (
+const Institutional = ({ onClick }) => (
   <section className="institutional text-light py-5">
     <Container>
       <Row>
@@ -38,7 +38,7 @@ const Institutional = () => (
           <IconText icon={faShieldAlt} color="#FFF" className="mb-2">
             Transações mais seguras
           </IconText>
-          <Button variant="outline-light" className="mt-5">
+          <Button onClick={onClick} variant="outline-light" className="mt-5">
             Abra sua conta
           </Button>
         </Col>

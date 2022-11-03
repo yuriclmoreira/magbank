@@ -1,0 +1,16 @@
+@import "../variables";
+
+.footer {
+  border-bottom: 0.2rem solid $color-secondary;
+}
+
+.magbank {
+  padding: 2rem;
+  @media screen and (min-width: 902px) {
+    padding: 0;
+  }
+}
+
+.store {
+  padding-left: 1rem;
+}
