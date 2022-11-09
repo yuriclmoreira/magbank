@@ -9,7 +9,7 @@ import AccountPayments from "../components/AccountPayments";
 import AccountHistory from "../components/AccountHistory";
 import "./Dashboard.scss";
 
-const Dashboard = () => {
+const Dashboard = ({ name, account }) => {
   const [activeLink, setActiveLink] = useState(0);
 
   const links = [
@@ -126,8 +126,8 @@ const Dashboard = () => {
               </span>
             </Col>
             <Col xs={9}>
-              <h3>Yuri Moreira</h3>
-              <p className="text-muted">Ag:1234 c/c:4321-5</p>
+              <h3>{name}</h3>
+              <p className="text-muted">{account}</p>
             </Col>
           </Row>
           <div className="d-grid gap-2">
